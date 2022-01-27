@@ -1,0 +1,10 @@
+etc/
+var/
+elpa/
+packages/
+
+*.html
+*~
+eshell/history
+eshell/lastdir
+.last-package-update-day
