@@ -58,3 +58,7 @@
 	(shell . t)))
 
   (push '("conf-unix" . conf-unix) org-src-lang-modes))
+
+(use-package ob-async
+  :custom
+  ob-async-no-async-languages-alist '("ipython"))

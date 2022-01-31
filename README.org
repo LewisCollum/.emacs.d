@@ -71,17 +71,24 @@
 #+end_src
 
 ** Org-Mode
+*** Graphics
 #+begin_src emacs-lisp
   (use-package org-bullets
     :hook (org-mode . org-bullets-mode))
+#+end_src
 
-
+*** Code Evaluation
+#+begin_src emacs-lisp
   (with-eval-after-load 'org
     (org-babel-do-load-languages
 	'org-babel-load-languages
 	'((emacs-lisp . t)
 	  (python . t)
 	  (shell . t)))
-
     (push '("conf-unix" . conf-unix) org-src-lang-modes))
+
+  (use-package ob-async
+    :custom
+    ob-async-no-async-languages-alist '("ipython"))  
+#+end_src
 #+end_src
