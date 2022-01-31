@@ -38,9 +38,7 @@
     (auto-package-update-maybe))
 #+end_src
 
-
 * UI
-
 ** Framing
 #+begin_src emacs-lisp
   (setq inhibit-startup-message t)
@@ -91,4 +89,12 @@
     :custom
     ob-async-no-async-languages-alist '("ipython"))  
 #+end_src
+
+* Shell
+#+begin_src emacs-lisp
+  (use-package exec-path-from-shell
+    :config
+    (when (memq window-system '(mac ns x))
+      (exec-path-from-shell-initialize)))
+
 #+end_src

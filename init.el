@@ -49,16 +49,20 @@
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
-
 (with-eval-after-load 'org
   (org-babel-do-load-languages
       'org-babel-load-languages
       '((emacs-lisp . t)
 	(python . t)
 	(shell . t)))
-
   (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
 (use-package ob-async
   :custom
   ob-async-no-async-languages-alist '("ipython"))
+
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
+
