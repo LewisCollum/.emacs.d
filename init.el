@@ -66,3 +66,7 @@
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
+(use-package load-bash-alias
+  :config
+  (setq load-bash-alias-bashrc-file "~/.bashrc")
+  (load-bash-alias-load-bash-aliases-into-eshell))
