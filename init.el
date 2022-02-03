@@ -75,3 +75,12 @@
   (with-current-buffer "*eshell*"
     (insert "clear 1")
     (eshell-send-input)))
+
+(defun efs/tangle-config()
+  (when (string-equal
+    (file-name-directory(buffer-file-name))
+    (expand-file-name user-emacs-directory))
+  (let ((org-confirm-babel-evaluate nil))
+    (org-babel-tangle))))
+
+(add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
