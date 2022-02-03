@@ -20,7 +20,6 @@
     (package-refresh-contents))
 #+end_src
 
-
 ** Install Automation
 #+begin_src emacs-lisp
   (unless (package-installed-p 'use-package)
@@ -29,7 +28,6 @@
   (require 'use-package)
   (setq use-package-always-ensure t)
 #+end_src
-
 
 ** Updates
 #+begin_src emacs-lisp
@@ -73,14 +71,14 @@
     :custom ((doom-modeline-height 15)))
 #+end_src
 
-** Org-Mode
-*** Graphics
+* Org-Mode
+** Graphics
 #+begin_src emacs-lisp
   (use-package org-bullets
     :hook (org-mode . org-bullets-mode))
 #+end_src
 
-*** Code Evaluation
+** Code Evaluation
 #+begin_src emacs-lisp
   (with-eval-after-load 'org
     (org-babel-do-load-languages
@@ -95,13 +93,21 @@
     ob-async-no-async-languages-alist '("ipython"))  
 #+end_src
 
-* Shell
+* Eshell
+Let's get the PATH for use in Emacs.
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
     :config
     (when (memq window-system '(mac ns x))
       (exec-path-from-shell-initialize)))
+#+end_src
 
+
+We convert bash aliases from =~/.bashrc= to eshell aliases. The
+package =load-bash-alias= pollutes the eshell prompt, so after aliases
+are loaded, we clear eshell. This chunk of code has the side-effect of
+leaving eshell open at startup (which I prefer anyways).
+  #+begin_src emacs-lisp
   (use-package load-bash-alias
     :config
     (setq load-bash-alias-bashrc-file "~/.bashrc")
