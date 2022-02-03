@@ -1,5 +1,10 @@
 #+title: Emacs
-#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes :exports code :results none
+#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes :exports code :results silent
+
+* Commentary :noexport:
+#+begin_src emacs-lisp
+  ;; init.el is auto-generated from README.org
+#+end_src
 
 * Package Management
 ** Archives

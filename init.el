@@ -1,3 +1,5 @@
+;; init.el is auto-generated from README.org
+
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
