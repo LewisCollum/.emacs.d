@@ -128,3 +128,11 @@ leaving eshell open at startup (which I prefer anyways).
 
   (add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
 #+end_src
+
+* Functions
+#+begin_src emacs-lisp
+  (defun mkcd(directory)
+    (let ((makeParentDirectories t))
+      (make-directory directory makeParentDirectories)
+      (cd directory)))
+#+end_src
