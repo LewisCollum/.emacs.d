@@ -35,8 +35,7 @@
 
 (column-number-mode)
 (global-display-line-numbers-mode t)
-(dolist (mode '(org-mode-hook
-		eshell-mode-hook))
+(dolist (mode '(org-mode-hook eshell-mode-hook treemacs-mode-hook))
   (add-hook mode(lambda() (display-line-numbers-mode 0))))
 
 (use-package doom-themes
@@ -89,3 +88,30 @@
   (let ((makeParentDirectories t))
     (make-directory directory makeParentDirectories)
     (cd directory)))
+
+(use-package which-key
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right))
+
+(use-package ivy)
+(use-package projectile
+  :custom ((projectile-completion-system 'ivy)))
+
+(use-package lsp-mode)
+(use-package lsp-ui)
+
+(use-package company
+  :bind
+  (:map company-active-map
+	("<tab>" . company-complete-selection))
+  (:map lsp-mode-map
+	("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package lsp-treemacs
+  :bind
+  (:map global-map
+	("C-<tab>" . treemacs)))
