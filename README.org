@@ -81,10 +81,10 @@
 #+begin_src emacs-lisp
   (with-eval-after-load 'org
     (org-babel-do-load-languages
-	'org-babel-load-languages
-	'((emacs-lisp . t)
-	  (python . t)
-	  (shell . t)))
+     'org-babel-load-languages
+     '((emacs-lisp . t)
+       (python . t)
+       (shell . t)))
     (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
   (use-package ob-async
@@ -93,6 +93,7 @@
 #+end_src
 
 * Eshell
+** PATH
 Let's get the PATH for use in Emacs.
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
@@ -101,12 +102,12 @@ Let's get the PATH for use in Emacs.
       (exec-path-from-shell-initialize)))
 #+end_src
 
-
+** Bash Aliases
 We convert bash aliases from =~/.bashrc= to eshell aliases. The
 package =load-bash-alias= pollutes the eshell prompt, so after aliases
 are loaded, we clear eshell. This chunk of code has the side-effect of
 leaving eshell open at startup (which I prefer anyways).
-  #+begin_src emacs-lisp
+#+begin_src emacs-lisp
   (use-package load-bash-alias
     :config
     (setq load-bash-alias-bashrc-file "~/.bashrc")
@@ -114,16 +115,17 @@ leaving eshell open at startup (which I prefer anyways).
     (with-current-buffer "*eshell*"
       (insert "clear 1")
       (eshell-send-input)))
-  #+end_src
+#+end_src
 
 * Configuration
+When the current directory is the emacs directory, then we tangle the Org file we are in, on save.
 #+begin_src emacs-lisp
   (defun efs/tangle-config()
-    (when (string-equal
-      (file-name-directory(buffer-file-name))
-      (expand-file-name user-emacs-directory))
-    (let ((org-confirm-babel-evaluate nil))
-      (org-babel-tangle))))
+    (let ((thisDirectory (file-name-directory(buffer-file-name)))
+	  (emacsDirectory (expand-file-name user-emacs-directory)))
+      (when (string-equal thisDirectory emacsDirectory)
+	(let ((org-confirm-babel-evaluate nil))
+	  (org-babel-tangle)))))
 
   (add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
 #+end_src
@@ -135,6 +137,7 @@ leaving eshell open at startup (which I prefer anyways).
       (make-directory directory makeParentDirectories)
       (cd directory)))
 #+end_src
+
 * Which Key
 #+begin_src emacs-lisp
   (use-package which-key

@@ -52,10 +52,10 @@
 
 (with-eval-after-load 'org
   (org-babel-do-load-languages
-      'org-babel-load-languages
-      '((emacs-lisp . t)
-	(python . t)
-	(shell . t)))
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (python . t)
+     (shell . t)))
   (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
 (use-package ob-async
@@ -76,11 +76,11 @@
     (eshell-send-input)))
 
 (defun efs/tangle-config()
-  (when (string-equal
-    (file-name-directory(buffer-file-name))
-    (expand-file-name user-emacs-directory))
-  (let ((org-confirm-babel-evaluate nil))
-    (org-babel-tangle))))
+  (let ((thisDirectory (file-name-directory(buffer-file-name)))
+	(emacsDirectory (expand-file-name user-emacs-directory)))
+    (when (string-equal thisDirectory emacsDirectory)
+      (let ((org-confirm-babel-evaluate nil))
+	(org-babel-tangle)))))
 
 (add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
 
@@ -115,3 +115,16 @@
   :bind
   (:map global-map
 	("C-<tab>" . treemacs)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(gradle-mode which-key use-package projectile org-bullets ob-async magit lsp-ui lsp-treemacs load-bash-alias ivy exec-path-from-shell doom-themes doom-modeline company-box auto-package-update)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
