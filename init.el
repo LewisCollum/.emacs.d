@@ -98,6 +98,11 @@
 (use-package projectile
   :custom ((projectile-completion-system 'ivy)))
 
+(use-package iedit)
+(use-package rg
+  :config
+  (rg-enable-default-bindings))
+
 (use-package lsp-mode)
 (use-package lsp-ui)
 

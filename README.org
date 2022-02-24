@@ -152,6 +152,19 @@ When the current directory is the emacs directory, then we tangle the Org file w
   (use-package projectile
     :custom ((projectile-completion-system 'ivy)))
 #+end_src
+* Variable Searching
+#+begin_src emacs-lisp
+  (use-package iedit)
+  (use-package rg
+    :config
+    (rg-enable-default-bindings))
+#+end_src
+
+** Renaming Project Variable
+Cursor over the variable, search =C-c s d=, place cursor over the
+variable in the results buffer, then iedit =C-;=, and finally apply
+=C-x C-s= and save all buffers =C-x s !=. For searching without
+variable under cursor, use =C-c s p=.
 
 * LSP
 #+begin_src emacs-lisp
