@@ -1,10 +1,12 @@
-etc/
-var/
-elpa/
-packages/
-
 *.html
 *~
 eshell/history
 eshell/lastdir
 .last-package-update-day
+.cache/
+.lsp-session-v1
+eshell/
+projectile-bookmarks.eld
+projects
+transient/
+elpa/
