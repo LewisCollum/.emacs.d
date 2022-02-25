@@ -196,5 +196,5 @@ variable under cursor, use =C-c s p=.
   (use-package lsp-treemacs
     :bind
     (:map global-map
-	  ("C-<tab>" . treemacs)))
+	  ("C-`" . treemacs)))
 #+end_src
