@@ -92,7 +92,9 @@
 (use-package which-key
   :config
   (which-key-mode)
-  (which-key-setup-side-window-right))
+  (which-key-setup-side-window-bottom)
+  :custom
+  which-key-idle-delay 1.5)
 
 (use-package ivy)
 (use-package projectile

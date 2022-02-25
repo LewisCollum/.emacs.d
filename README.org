@@ -143,7 +143,9 @@ When the current directory is the emacs directory, then we tangle the Org file w
   (use-package which-key
     :config
     (which-key-mode)
-    (which-key-setup-side-window-right))
+    (which-key-setup-side-window-bottom)
+    :custom
+    which-key-idle-delay 1.5)
 #+end_src
 
 * Projectile
