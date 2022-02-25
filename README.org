@@ -21,6 +21,7 @@
 #+end_src
 
 ** Install Automation
+=use-package= has common keywords: [[https://github.com/jwiegley/use-package#customizing-variables][=:custom=]], [[https://github.com/jwiegley/use-package#customizing-variables][=:config=]]. 
 #+begin_src emacs-lisp
   (unless (package-installed-p 'use-package)
     (package-install 'use-package))
