@@ -98,6 +98,8 @@
 
 (use-package ivy)
 (use-package projectile
+  :config (projectile-mode +1)
+  :bind (:map global-map ("C-c p" . projectile-command-map))
   :custom ((projectile-completion-system 'ivy)))
 
 (use-package iedit)

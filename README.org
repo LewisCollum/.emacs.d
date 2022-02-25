@@ -152,8 +152,12 @@ When the current directory is the emacs directory, then we tangle the Org file w
 #+begin_src emacs-lisp
   (use-package ivy)
   (use-package projectile
+    :config (projectile-mode +1)
+    :bind (:map global-map ("C-c p" . projectile-command-map))
     :custom ((projectile-completion-system 'ivy)))
 #+end_src
+Find a project file using =C-c p f=.
+
 * Variable Searching
 #+begin_src emacs-lisp
   (use-package iedit)
