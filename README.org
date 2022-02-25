@@ -199,3 +199,9 @@ variable under cursor, use =C-c s p=.
     (:map global-map
 	  ("C-`" . treemacs)))
 #+end_src
+
+* Python
+To use lsp with python, we can install python's language server
+#+begin_src bash
+  python3 -m pip install python-language-server[all]
+#+end_src
