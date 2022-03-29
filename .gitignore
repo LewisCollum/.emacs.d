@@ -10,3 +10,9 @@ projectile-bookmarks.eld
 projects
 transient/
 elpa/
+/tramp
+/url/
+/workspace/
+/eclipse.jdt.ls/
+/.org-id-locations
+/.dap-breakpoints
