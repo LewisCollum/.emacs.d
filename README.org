@@ -97,6 +97,14 @@
     ob-async-no-async-languages-alist '("ipython"))  
 #+end_src
 
+** Tangling
+#+begin_src emacs-lisp
+  (use-package org-tanglesync
+    :hook ((org-mode . org-tanglesync-mode)
+	   ;; enable watch-mode globally:
+	   ((prog-mode text-mode) . org-tanglesync-watch-mode)))
+#+end_src
+
 * Eshell
 ** PATH
 Let's get the PATH for use in Emacs.

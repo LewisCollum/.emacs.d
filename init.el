@@ -66,6 +66,11 @@
   :custom
   ob-async-no-async-languages-alist '("ipython"))
 
+(use-package org-tanglesync
+  :hook ((org-mode . org-tanglesync-mode)
+	 ;; enable watch-mode globally:
+	 ((prog-mode text-mode) . org-tanglesync-watch-mode)))
+
 (use-package exec-path-from-shell
   :config
   (when (memq window-system '(mac ns x))
