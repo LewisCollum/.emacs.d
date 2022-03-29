@@ -51,7 +51,10 @@
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
-(with-eval-after-load 'org
+(use-package org
+  :custom
+  org-babel-python-command "python3"
+  :config
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
