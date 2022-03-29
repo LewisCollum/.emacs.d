@@ -217,3 +217,10 @@ To use lsp with python, we can install python's language server
 #+begin_src bash
   python3 -m pip install python-language-server[all]
 #+end_src
+
+* JavaScript
+#+begin_src emacs-lisp
+  (use-package web-mode
+    :init
+    (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+#+end_src

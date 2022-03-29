@@ -133,3 +133,7 @@
   :bind
   (:map global-map
 	("C-`" . treemacs)))
+
+(use-package web-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
