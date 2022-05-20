@@ -112,6 +112,7 @@ Let's get the PATH for use in Emacs.
   (use-package exec-path-from-shell
     :config
     (when (memq window-system '(mac ns x))
+      (exec-path-from-shell-copy-env "JAVA_HOME")
       (exec-path-from-shell-initialize)))
 #+end_src
 
