@@ -39,7 +39,7 @@
   (add-hook mode(lambda() (display-line-numbers-mode 0))))
 
 (use-package doom-themes
-  :init (load-theme 'doom-palenight t))
+  :init (load-theme 'doom-zenburn t))
 
 (use-package all-the-icons
   :custom (all-the-icons-install-fonts 1))

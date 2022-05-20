@@ -62,7 +62,7 @@
 ** Themes
 #+begin_src emacs-lisp
   (use-package doom-themes
-    :init (load-theme 'doom-palenight t))
+    :init (load-theme 'doom-zenburn t))
 
   (use-package all-the-icons
     :custom (all-the-icons-install-fonts 1))
