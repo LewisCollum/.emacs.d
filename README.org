@@ -72,6 +72,13 @@
     :custom ((doom-modeline-height 15)))
 #+end_src
 
+** Transparency
+#+begin_src emacs-lisp
+  (let ((opacity 95))
+    (set-frame-parameter (selected-frame) 'alpha (list opacity opacity))
+    (add-to-list 'default-frame-alist '(alpha opacity opacity)))
+#+end_src
+
 * Org-Mode
 ** Graphics
 #+begin_src emacs-lisp

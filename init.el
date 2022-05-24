@@ -48,6 +48,10 @@
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
 
+(let ((opacity 95))
+  (set-frame-parameter (selected-frame) 'alpha (list opacity opacity))
+  (add-to-list 'default-frame-alist '(alpha opacity opacity)))
+
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
@@ -138,3 +142,16 @@
 (use-package web-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(magit web-mode lsp-treemacs company lsp-ui lsp-mode rg iedit projectile ivy which-key load-bash-alias exec-path-from-shell org-tanglesync ob-async org-bullets doom-modeline all-the-icons doom-themes auto-package-update use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
