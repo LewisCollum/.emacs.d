@@ -48,6 +48,11 @@
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
 
+(let ((defaultFont "Iosevka-12"))
+  (add-to-list 'default-frame-alist (cons 'font defaultFont))
+  (set-face-attribute 'default t :font defaultFont)
+  (set-frame-font defaultFont nil t))
+
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
