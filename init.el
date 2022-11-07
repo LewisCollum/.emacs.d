@@ -87,7 +87,7 @@
   (let ((thisDirectory (file-name-directory(buffer-file-name)))
 	(emacsDirectory (expand-file-name user-emacs-directory)))
     (when (string-equal thisDirectory emacsDirectory)
-      (let ((org-confirm-babel-evaluate nil))
+  (let ((org-confirm-babel-evaluate nil))
 	(org-babel-tangle)))))
 
 (add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
