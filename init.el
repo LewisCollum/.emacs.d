@@ -134,3 +134,8 @@
 (use-package web-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+
+(add-hook 'json-mode-hook
+	  (lambda ()
+	    (make-local-variable 'js-indent-level)
+	    (setq js-indent-level 2)))

@@ -220,4 +220,9 @@ To use lsp with python, we can install python's language server
   (use-package web-mode
     :init
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+
+  (add-hook 'json-mode-hook
+	    (lambda ()
+	      (make-local-variable 'js-indent-level)
+	      (setq js-indent-level 2)))
 #+end_src
