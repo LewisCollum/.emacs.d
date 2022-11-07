@@ -53,7 +53,8 @@
 
 (use-package org
   :custom
-  org-babel-python-command "python3"
+  (org-confirm-babel-evaluate nil)
+  (org-babel-python-command "python3")
   :config
   (org-babel-do-load-languages
    'org-babel-load-languages
