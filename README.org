@@ -100,10 +100,7 @@
 
 ** Tangling
 #+begin_src emacs-lisp
-  (use-package org-tanglesync
-    :hook ((org-mode . org-tanglesync-mode)
-	   ;; enable watch-mode globally:
-	   ((prog-mode text-mode) . org-tanglesync-watch-mode)))
+  (use-package org-tanglesync)
 #+end_src
 
 * Eshell
