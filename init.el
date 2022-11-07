@@ -95,11 +95,6 @@
 
 (add-hook 'org-mode-hook (lambda() (add-hook 'after-save-hook #'efs/tangle-config)))
 
-(defun mkcd(directory)
-  (let ((makeParentDirectories t))
-    (make-directory directory makeParentDirectories)
-    (cd directory)))
-
 (use-package which-key
   :config
   (which-key-mode)
