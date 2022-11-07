@@ -124,9 +124,8 @@
   (company-idle-delay 0.0))
 
 (use-package lsp-treemacs
-  :bind
-  (:map global-map
-	("C-`" . treemacs)))
+  :bind (:map global-map ("C-`" . treemacs)))
+
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)

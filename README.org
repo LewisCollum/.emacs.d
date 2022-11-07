@@ -198,9 +198,7 @@ variable under cursor, use =C-c s p=.
 * Treemacs
 #+begin_src emacs-lisp
   (use-package lsp-treemacs
-    :bind
-    (:map global-map
-	  ("C-`" . treemacs)))
+    :bind (:map global-map ("C-`" . treemacs)))
 #+end_src
 
 * General Code Format
