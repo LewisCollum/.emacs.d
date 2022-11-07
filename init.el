@@ -127,6 +127,9 @@
   :bind
   (:map global-map
 	("C-`" . treemacs)))
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 
 (use-package web-mode
   :init
