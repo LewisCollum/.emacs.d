@@ -233,7 +233,23 @@ To use lsp with python, we can install python's language server
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
 
   (add-hook 'json-mode-hook
-	    (lambda ()
-	      (make-local-variable 'js-indent-level)
-	      (setq js-indent-level 2)))
+        (lambda ()
+          (make-local-variable 'js-indent-level)
+          (setq js-indent-level 2)))
+
+  (use-package json-mode)
+  (use-package js-mode)
 #+end_src
+
+* Java / Kotlin
+
+#+begin_src emacs-lisp
+  (use-package kotlin-mode)
+#+end_src
+
+* Docker
+
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode)
+#+end_src
+

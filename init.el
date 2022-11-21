@@ -140,6 +140,13 @@
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
 
 (add-hook 'json-mode-hook
-	  (lambda ()
-	    (make-local-variable 'js-indent-level)
-	    (setq js-indent-level 2)))
+      (lambda ()
+        (make-local-variable 'js-indent-level)
+        (setq js-indent-level 2)))
+
+(use-package json-mode)
+(use-package js-mode)
+
+(use-package kotlin-mode)
+
+(use-package dockerfile-mode)
