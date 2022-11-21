@@ -74,7 +74,7 @@
 
 ** Font
 #+begin_src emacs-lisp
-  (let ((defaultFont "Iosevka-12"))
+  (let ((defaultFont "Iosevka-16"))
     (add-to-list 'default-frame-alist (cons 'font defaultFont))
     (set-face-attribute 'default t :font defaultFont)
     (set-frame-font defaultFont nil t))
@@ -215,11 +215,13 @@ variable under cursor, use =C-c s p=.
 #+end_src
 
 * General Code Format
+
 #+begin_src emacs-lisp
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 4)
   (setq-default c-basic-offset 4)
 #+end_src
+
 * Python
 To use lsp with python, we can install python's language server
 #+begin_src bash
