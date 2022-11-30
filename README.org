@@ -240,7 +240,6 @@ To use lsp with python, we can install python's language server
           (setq js-indent-level 2)))
 
   (use-package json-mode)
-  (use-package js-mode)
 #+end_src
 
 * Java / Kotlin

@@ -145,7 +145,6 @@
         (setq js-indent-level 2)))
 
 (use-package json-mode)
-(use-package js-mode)
 
 (use-package kotlin-mode)
 
